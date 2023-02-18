@@ -1,0 +1,38 @@
+use('canastadb');
+
+//db.data.find({});
+
+
+//➢ Cuáles fueron los meses de gobierno de León Febres Cordero, según los documentos de la bd.
+//db.data.find({ "GOBIERNO": /Febres Cordero;/ }, { "MES": 1 })
+
+//➢ Quien estaba como gobierno en el año de 1989 y cual fue el ingreso familiar mensual.
+//db.data.find({ "YEAR": "1989" }, { "GOBIERNO": 1, "MES": 1, "COSTO_CANASTA": 1 })
+
+//➢ Cual fue el costo de la Canasta básica en el gobierno de Jamil Mahuad W.
+//db.data.find({ "GOBIERNO": /Mahuad W/ }, { "COSTO_CANASTA": 1 })
+
+//➢ En qué gobierno el costo de la Canasta básica fue mayor a 700.
+//db.data.find({ "COSTO_CANASTA": { $gt: 700 } }, { "GOBIERNO": 1 })
+
+//➢ En qué gobierno el costo de la Canasta básica fue menor a los 200.
+//db.data.find({ "COSTO_CANASTA": { $lt: 200 } }, { "GOBIERNO": 1 })
+
+
+//➢ Cuantos documentos tienen costo de la Canasta básica mayor a 700.
+//db.data.find({ "COSTO_CANASTA": { $gt: 700 } }).count()
+
+
+//➢ Cuentos documentos tienen el costo de la Canasta básica menor a los 200.
+//db.data.find({ "COSTO_CANASTA": { $lt: 200 } }).count()
+
+
+//➢ Que gobiernos estuvieron antes de 1982 y después del 2008.
+/*db.data.find({
+  $or: [
+    { "GOBIERNO": { $lt: "1982" } },
+    { "GOBIERNO": { $gt: "2008" } }
+  ]
+})*/
+
+
